@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل دخول الإدارة - نظام تفعيل الضمان</title>
+    <link rel="shortcut icon" href="./image/logo_lozan.png" type="image/x-icon">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box login">
+            <form action="">
+                <h1>تفعيل ضمان المنتج</h1>
+                <p>أدخل الرقم التسلسلي المرفق مع منتجك لتفعيل الضمان والحصول على تأكيد عبر الرسائل النصية.</p>
+                <div class="input-box">
+                    <div class="title-input">
+                        <i class="fa-solid fa-barcode"></i>
+                        <h4>الرقم التسلسلي*</h4>
+                    </div>
+                    <input type="text" maxlength="10" placeholder="اضف الرقم التسلسلي (10 ارقام) " name="text" required>
+                </div>
+                <input type="hidden" name="role" id="roleInput" hidden>
+                <div class="role-buttons">
+                    <button type="button" onclick="selectRole('Student')" id="studentBtn"></i>موزع معتمد <i class="fa-solid fa-handshake-simple"></i></button>
+                    <button type="button" onclick="selectRole('Doctor')" id="doctorBtn">المتجر الرسمي <i class="fa-solid fa-shop"></i></button>
+                </div>
+                <div class="input-box">
+                    <div class="title-input">
+                        <i class="fa-solid fa-id-card"></i>
+                        <h4>رقم السياره*</h4>
+                    </div>
+                    <input type="text" placeholder="اضف الارقام او الحروف" name="text" required>
+                </div>
+                <div class="input-box">
+                    <div class="title-input">
+                        <i class="fa-solid fa-square-phone-flip"></i>
+                        <h4>رقم الهاتف*</h4>
+                    </div>
+                    <input type="text" placeholder="+01234567899" name="phoneNumber" required>
+                    <div class="title-input">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <h6>سيتم إرسال رسالة تأكيد على هذا الرقم</h6>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">تفعيل الضمان</button>
+                <p><i class="fa-solid fa-circle-exclamation fa-shake fa-xl"></i> يرجي التاكد من ان جميع البيانات صحيحه قبل الارسال </p>
+            </form>
+        </div>
+        <div class="form-box register">
+            <h1> <i class="fa-solid fa-user-tie fa-beat-fade"> تسجيل دخول الإدارة</i></h1>
+            <!-- onsubmit="return handleFormSubmit(event)"" -->
+            <form  class="formReg" >
+                <div class="input-box" id="box-1">
+                    <input type="text" placeholder="اسم المستخدم" name="firstName" required>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="كلمه المرور" name="password" required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+
+                <button type="submit" class="btn"><i class="fa-solid fa-right-to-bracket fa-fade"> تسجيل الدخول </i></button>
+            </form>
+            <p><i class="fa-solid fa-circle-exclamation fa-shake fa-xl"></i> مخصص للموزعين المعتمدين فقط.</p>
+        </div>
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                <h1>... مرحباً بك</h1>
+                <div>
+                    <div class="logo">
+                        <img src="/image/logo_lozan.png" alt="logo">
+                    </div>
+                </div>
+                <p>هل انت ادمن ....؟</p>
+                <button class="btn register-btn">لوحه التحكم</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>.... مرحباً بك</h1>
+                <div class="logo">
+                    <img src="/image/logo_lozan.png" alt="logo">
+                </div>
+                <p>اذا كنت تريد تسجيل رقم تسلسلي جديد ..؟</p>
+                <button class="btn login-btn">تسجيل رقم جديد</button>
+            </div>
+        </div>
+        <div id="reg-failed-popup" class="popup">
+            <div class="popup-content">
+                <h2>Registration Failed</h2>
+                <p>Something went wrong. Please check your inputs or try again later.</p>
+                <button onclick="closeRegFailedPopup()">Okay</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
