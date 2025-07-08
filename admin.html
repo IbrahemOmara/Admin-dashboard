@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="header-links">
-            <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"> تسجيل خروج</i></a>
+            <a href="#" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"> تسجيل خروج</i></a>
         </div>
 
         <div class="hallo">
@@ -41,19 +41,19 @@
 
         <div class="search-add">
             <div class="search-bar">
-                <input type="text" placeholder="ابحث بالرقم التسلسلي">
+                <input type="text" id="searchInput" placeholder="ابحث بالرقم التسلسلي أو الهاتف..." onkeyup="filterTable()">
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
             <div class="add-btn">
-                <button><i class="fa-solid fa-plus"> اضافه رقم تسلسلي جديد</i></button>
+                <button onclick="addWarranty()"><i class="fa-solid fa-plus"> اضافه رقم تسلسلي جديد</i></button>
             </div>
 
         </div>
 
 
         <div class="content">
-            <table>
+            <table id="warrantyTable">
                 <thead>
                     <tr>
                         <th>الرقم التسلسلي</th>
@@ -65,7 +65,7 @@
                     </tr>
 
                 </thead>
-                <tbody>
+                <tbody id="warrantyData">
                     <tr class="active">
                         <td>2Z613048X5	</td>
                         <td>0102323232</td>
@@ -131,7 +131,7 @@
                     </tr>
 
                     <tr class="active">
-                        <td>2Z613048X5	</td>
+                        <td>2Z61301234	</td>
                         <td>0102323232</td>
                         <td class="yes">
                             <i class="fa-solid fa-square-check"></i>
@@ -147,7 +147,7 @@
                     </tr>
 
                     <tr class="inactive">
-                        <td>2Z613048X5</td>
+                        <td>2Z61304800</td>
                         <td>01022222222</td>
                         <td class="no">
                             <i class="fa-solid fa-hourglass-half fa-spin fa-spin-reverse fa-lg"></i>
@@ -163,7 +163,7 @@
                     </tr>
 
                     <tr class="active">
-                        <td>2Z613048X5	</td>
+                        <td>2Z613035X5	</td>
                         <td>0102323232</td>
                         <td class="yes">
                             <i class="fa-solid fa-square-check"></i>
@@ -179,7 +179,7 @@
                     </tr>
 
                     <tr class="inactive">
-                        <td>2Z613048X5</td>
+                        <td>2Z610948X5</td>
                         <td>01022222222</td>
                         <td class="no">
                             <i class="fa-solid fa-hourglass-half fa-spin fa-spin-reverse fa-lg"></i>
@@ -232,23 +232,7 @@
 
     </section>
 
-    <script>
-  const rows = document.querySelectorAll("tbody tr");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target); // تظهر مرة واحدة فقط
-      }
-    });
-  }, {
-    threshold: 0.6 // يبدأ الأنيميشن عند ظهور 10% من الصف
-  });
-
-  rows.forEach(row => {
-    observer.observe(row);
-  });
+<script src="admin.js">
 </script>
 
 </body>

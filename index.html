@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="form-box login">
-            <form action="">
+            <form action="" id="warrantyForm">
                 <h1>تفعيل ضمان المنتج</h1>
                 <p>أدخل الرقم التسلسلي المرفق مع منتجك لتفعيل الضمان والحصول على تأكيد عبر الرسائل النصية.</p>
                 <div class="input-box">
@@ -20,7 +20,7 @@
                         <i class="fa-solid fa-barcode"></i>
                         <h4>الرقم التسلسلي*</h4>
                     </div>
-                    <input type="text" maxlength="10" placeholder="اضف الرقم التسلسلي (10 ارقام) " name="text" required>
+                    <input type="text" maxlength="10" placeholder="اضف الرقم التسلسلي (10 ارقام) " name="serial" required>
                 </div>
                 <input type="hidden" name="role" id="roleInput" hidden>
                 <div class="role-buttons">
@@ -32,14 +32,14 @@
                         <i class="fa-solid fa-id-card"></i>
                         <h4>رقم السياره*</h4>
                     </div>
-                    <input type="text" placeholder="اضف الارقام او الحروف" name="text" required>
+                    <input type="text" placeholder="اضف الارقام او الحروف" name="plate" required>
                 </div>
                 <div class="input-box">
                     <div class="title-input">
                         <i class="fa-solid fa-square-phone-flip"></i>
                         <h4>رقم الهاتف*</h4>
                     </div>
-                    <input type="text" placeholder="+01234567899" name="phoneNumber" required>
+                    <input type="text" placeholder="+01234567899" name="phone" required>
                     <div class="title-input">
                         <i class="fa-solid fa-comment-dots"></i>
                         <h6>سيتم إرسال رسالة تأكيد على هذا الرقم</h6>

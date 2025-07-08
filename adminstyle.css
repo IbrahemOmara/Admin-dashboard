@@ -45,9 +45,11 @@ header{
         text-decoration: none;
         color: #b7b6b6;
         transition: .2s ease-in-out .01s;
+        cursor: pointer;
     }
     a:hover{
         color: rgb(210 36 39 );
+        cursor: pointer;
     }
     .hallo{
         text-decoration: none;
@@ -56,6 +58,7 @@ header{
     .header-links{
         text-decoration: none;
         color: black;
+        cursor: pointer;
     }
     p{
         align-self: center;
